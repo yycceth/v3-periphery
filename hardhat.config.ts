@@ -3,6 +3,8 @@ import '@nomiclabs/hardhat-etherscan'
 import '@nomiclabs/hardhat-waffle'
 import 'hardhat-typechain'
 import 'hardhat-watcher'
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const LOW_OPTIMIZER_COMPILER_SETTINGS = {
   version: '0.7.6',
@@ -78,11 +80,14 @@ export default {
     optimism: {
       url: `https://optimism-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
+    bscTestnet: {
+      url: "https://data-seed-prebsc-2-s1.binance.org:8545",
+    },
   },
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.API_KEY_ETHERSCAN_BSCTESTNET,
   },
   solidity: {
     compilers: [DEFAULT_COMPILER_SETTINGS],
